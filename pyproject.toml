@@ -1,0 +1,75 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lugon-poker-lab"
+version = "1.0.11"
+description = "Local, dependency-free Texas Hold'em poker lab: live vision HUD, ICM/push-fold solver, and player intelligence."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [
+    { name = "Luis Goncalves" }
+]
+keywords = [
+    "poker",
+    "texas-holdem",
+    "icm",
+    "push-fold",
+    "game-theory",
+    "cfr",
+    "spin-and-go",
+    "vision-hud"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Games/Entertainment",
+    "Topic :: Scientific/Engineering :: Mathematics",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "mypy>=1.0",
+    "ruff>=0.1.0",
+]
+
+[project.scripts]
+lugon-companion = "lugon_poker.companion_gui:main"
+lugon-poker = "lugon_poker.cli:main"
+lugon-sim = "lugon_poker.sim_cli:main"
+lugon-vision = "lugon_poker.vision_cli:main"
+lugon-profiles = "lugon_poker.profiles_cli:main"
+lugon-bridge = "lugon_poker.bridge_cli:main"
+lugon-three-max = "lugon_poker.three_max_cli:main"
+lugon-push-fold = "lugon_poker.push_fold_cli:main"
+
+[tool.setuptools.packages.find]
+include = ["lugon_poker*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "-v --strict-markers"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I"]
+ignore = ["E501"]
+
+[tool.mypy]
+python_version = "3.10"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false

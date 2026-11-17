@@ -1,0 +1,51 @@
+{
+  "format": "lugon_3max_seed_check_v1",
+  "purpose": "Check whether action-frequency disagreement shrinks with a larger chance sample.",
+  "parameters": {
+    "stacks_bb": {
+      "BTN": 8,
+      "SB": 8,
+      "BB": 8
+    },
+    "payouts": [
+      0.7,
+      0.3,
+      0
+    ],
+    "samples_per_seed": 100000,
+    "max_iterations": 100,
+    "tolerance": 0.005
+  },
+  "results": [
+    {
+      "seed": 7,
+      "iterations": 25,
+      "nash_conv_on_own_sample": 0.000587,
+      "converged_on_own_sample": true,
+      "combo_weighted_action_frequency": {
+        "btn_push": 0.2916,
+        "sb_push_after_btn_fold": 0.7125,
+        "sb_call_vs_btn_shove": 0.0738,
+        "bb_call_vs_sb_shove": 0.2399,
+        "bb_call_vs_btn_shove": 0.1054,
+        "bb_call_multiway": 0.0335
+      }
+    },
+    {
+      "seed": 19,
+      "iterations": 25,
+      "nash_conv_on_own_sample": 0.000775,
+      "converged_on_own_sample": true,
+      "combo_weighted_action_frequency": {
+        "btn_push": 0.293,
+        "sb_push_after_btn_fold": 0.6558,
+        "sb_call_vs_btn_shove": 0.0734,
+        "bb_call_vs_sb_shove": 0.2407,
+        "bb_call_vs_btn_shove": 0.1156,
+        "bb_call_multiway": 0.041
+      }
+    }
+  ],
+  "interpretation": "The SB open-shove rate differs by about 5.7 percentage points even at 100k deals. NashConv is measured on each seed's own sample, so this check shows seed sensitivity but does not identify whether it comes from near-equivalent strategies or solver/sample instability. A shared held-out deal set is still needed.",
+  "rounded_to_decimal_places": 4
+}

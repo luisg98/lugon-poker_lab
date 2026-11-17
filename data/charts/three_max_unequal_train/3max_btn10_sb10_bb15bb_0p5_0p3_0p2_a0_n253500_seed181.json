@@ -1,0 +1,1582 @@
+{
+  "format": "lugon_3max_push_fold_icm_v1",
+  "game": "three_player_push_fold_icm",
+  "players": [
+    "BTN",
+    "SB",
+    "BB"
+  ],
+  "assumptions": [
+    "preflop push/fold tree; no limps or postflop decisions",
+    "physical card deals preserve blockers and multiway outcomes",
+    "strategies are shared by the 169 starting-hand classes",
+    "Malmuth-Harville ICM prizes; no rake",
+    "Monte Carlo chance deals using the reported sampling method and seed",
+    "simultaneous regret matching+ is approximate in a three-player game",
+    "NashConv is measured on the sampled game, not the full card tree",
+    "uncalled chips are returned before side pots are awarded"
+  ],
+  "parameters": {
+    "stacks_bb": {
+      "BTN": 10.0,
+      "SB": 10.0,
+      "BB": 15.0
+    },
+    "payouts": [
+      0.5,
+      0.3,
+      0.2
+    ],
+    "small_blind_bb": 0.5,
+    "big_blind_bb": 1.0,
+    "ante_bb_per_player": 0.0
+  },
+  "sampling": {
+    "deals": 253500,
+    "seed": 181,
+    "method": "stratified_by_seat_and_hand_class",
+    "samples_per_hand_class": 500
+  },
+  "convergence": {
+    "algorithm": "simultaneous_regret_matching_plus",
+    "iterations": 25,
+    "nash_conv_payout_units": 0.0001767972849725672,
+    "converged_on_sample": true
+  },
+  "action_definitions": {
+    "btn_push": "BTN faz shove; ação alternativa: fold",
+    "sb_push_after_btn_fold": "SB faz open-shove depois de BTN foldar; alternativa: fold",
+    "sb_call_vs_btn_shove": "SB paga o shove de BTN; alternativa: fold",
+    "bb_call_vs_sb_shove": "BB paga o shove de SB depois de BTN foldar; alternativa: fold",
+    "bb_call_vs_btn_shove": "BB paga o shove de BTN quando SB folda; alternativa: fold",
+    "bb_call_multiway": "BB paga o shove de BTN depois de SB já ter pago; alternativa: fold"
+  },
+  "expected_icm": {
+    "BTN": 0.3222040086281383,
+    "SB": 0.316272800309682,
+    "BB": 0.3615231910621829
+  },
+  "strategies": [
+    {
+      "hand_class": "AA",
+      "btn_push": 0.9984615384615385,
+      "sb_push_after_btn_fold": 0.9984615384615385,
+      "sb_call_vs_btn_shove": 0.9984615384615385,
+      "bb_call_vs_sb_shove": 0.9984615384615385,
+      "bb_call_vs_btn_shove": 0.9984615384615385,
+      "bb_call_multiway": 0.9984615384615385
+    },
+    {
+      "hand_class": "AKs",
+      "btn_push": 0.9984615384615385,
+      "sb_push_after_btn_fold": 0.9984615384615385,
+      "sb_call_vs_btn_shove": 0.9868421985920929,
+      "bb_call_vs_sb_shove": 0.9984615384615385,
+      "bb_call_vs_btn_shove": 0.9984615384615385,
+      "bb_call_multiway": 0.8144471290129314
+    },
+    {
+      "hand_class": "AQs",
+      "btn_push": 0.9984615384615385,
+      "sb_push_after_btn_fold": 0.9984615384615385,
+      "sb_call_vs_btn_shove": 0.41533794610771846,
+      "bb_call_vs_sb_shove": 0.9984615384615385,
+      "bb_call_vs_btn_shove": 0.9984615384615385,
+      "bb_call_multiway": 0.99835187032405
+    },
+    {
+      "hand_class": "AJs",
+      "btn_push": 0.9984615384615385,
+      "sb_push_after_btn_fold": 0.9984615384615385,
+      "sb_call_vs_btn_shove": 0.9984615384615385,
+      "bb_call_vs_sb_shove": 0.9984615384615385,
+      "bb_call_vs_btn_shove": 0.9984615384615385,
+      "bb_call_multiway": 0.9984615384615385
+    },
+    {
+      "hand_class": "ATs",
+      "btn_push": 0.9984615384615385,
+      "sb_push_after_btn_fold": 0.9984615384615385,
+      "sb_call_vs_btn_shove": 0.9440848636366951,
+      "bb_call_vs_sb_shove": 0.9984615384615385,
+      "bb_call_vs_btn_shove": 0.9964187862502959,
+      "bb_call_multiway": 0.8055614520872609
+    },
+    {
+      "hand_class": "A9s",
+      "btn_push": 0.9984615384615385,
+      "sb_push_after_btn_fold": 0.9984615384615385,
+      "sb_call_vs_btn_shove": 0.048692683496563714,
+      "bb_call_vs_sb_shove": 0.9984615384615385,
+      "bb_call_vs_btn_shove": 0.8654148701256171,
+      "bb_call_multiway": 0.713444764823872
+    },
+    {
+      "hand_class": "A8s",
+      "btn_push": 0.9976116049341034,
+      "sb_push_after_btn_fold": 0.9984615384615385,
+      "sb_call_vs_btn_shove": 0.010180576145045132,
+      "bb_call_vs_sb_shove": 0.9984615384615385,
+      "bb_call_vs_btn_shove": 0.17552435956732068,
+      "bb_call_multiway": 0.2989862666673894
+    },
+    {
+      "hand_class": "A7s",
+      "btn_push": 0.9964897619526073,
+      "sb_push_after_btn_fold": 0.9984615384615385,
+      "sb_call_vs_btn_shove": 0.9585157437740799,
+      "bb_call_vs_sb_shove": 0.9984615384615385,
+      "bb_call_vs_btn_shove": 0.9984615384615385,
+      "bb_call_multiway": 0.9984615384615385
+    },
+    {
+      "hand_class": "A6s",
+      "btn_push": 0.9676725535966791,
+      "sb_push_after_btn_fold": 0.9984615384615385,
+      "sb_call_vs_btn_shove": 0.010210620862665547,
+      "bb_call_vs_sb_shove": 0.9984615384615385,
+      "bb_call_vs_btn_shove": 0.019801495032916037,
+      "bb_call_multiway": 0.9033617800542368
+    },
+    {
+      "hand_class": "A5s",
+      "btn_push": 0.008414417196520781,
+      "sb_push_after_btn_fold": 0.9984615384615385,
+      "sb_call_vs_btn_shove": 0.009604265593697422,
+      "bb_call_vs_sb_shove": 0.9951958743639755,
+      "bb_call_vs_btn_shove": 0.051584304841372206,
+      "bb_call_multiway": 0.9984615384615385
+    },
+    {
+      "hand_class": "A4s",
+      "btn_push": 0.00873059053645704,
+      "sb_push_after_btn_fold": 0.9984615384615385,
+      "sb_call_vs_btn_shove": 0.00992159357433201,
+      "bb_call_vs_sb_shove": 0.9883710458189363,
+      "bb_call_vs_btn_shove": 0.030089731099545932,
+      "bb_call_multiway": 0.16210710134230577
+    },
+    {
+      "hand_class": "A3s",
+      "btn_push": 0.9866337837740838,
+      "sb_push_after_btn_fold": 0.9984615384615385,
+      "sb_call_vs_btn_shove": 0.008383095982890417,
+      "bb_call_vs_sb_shove": 0.9984615384615385,
+      "bb_call_vs_btn_shove": 0.025502452254446327,
+      "bb_call_multiway": 0.9798218407678988
+    },
+    {
+      "hand_class": "A2s",
+      "btn_push": 0.9870020155540239,
+      "sb_push_after_btn_fold": 0.9984615384615385,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.5908546998744223,
+      "bb_call_vs_btn_shove": 0.021923718220981877,
+      "bb_call_multiway": 0.16010107746799304
+    },
+    {
+      "hand_class": "AKo",
+      "btn_push": 0.9984615384615385,
+      "sb_push_after_btn_fold": 0.9984615384615385,
+      "sb_call_vs_btn_shove": 0.9984615384615385,
+      "bb_call_vs_sb_shove": 0.9984615384615385,
+      "bb_call_vs_btn_shove": 0.9984615384615385,
+      "bb_call_multiway": 0.9984615384615385
+    },
+    {
+      "hand_class": "KK",
+      "btn_push": 0.9984615384615385,
+      "sb_push_after_btn_fold": 0.9984615384615385,
+      "sb_call_vs_btn_shove": 0.9984615384615385,
+      "bb_call_vs_sb_shove": 0.9984615384615385,
+      "bb_call_vs_btn_shove": 0.9984615384615385,
+      "bb_call_multiway": 0.9984615384615385
+    },
+    {
+      "hand_class": "KQs",
+      "btn_push": 0.9984615384615385,
+      "sb_push_after_btn_fold": 0.9984615384615385,
+      "sb_call_vs_btn_shove": 0.8909564471832361,
+      "bb_call_vs_sb_shove": 0.9984615384615385,
+      "bb_call_vs_btn_shove": 0.9927237624303271,
+      "bb_call_multiway": 0.5475488505392541
+    },
+    {
+      "hand_class": "KJs",
+      "btn_push": 0.9531855841555309,
+      "sb_push_after_btn_fold": 0.9984615384615385,
+      "sb_call_vs_btn_shove": 0.9965991315508974,
+      "bb_call_vs_sb_shove": 0.9984615384615385,
+      "bb_call_vs_btn_shove": 0.9528396877845575,
+      "bb_call_multiway": 0.3091620777061449
+    },
+    {
+      "hand_class": "KTs",
+      "btn_push": 0.1406541462999335,
+      "sb_push_after_btn_fold": 0.9984615384615385,
+      "sb_call_vs_btn_shove": 0.009027468087194325,
+      "bb_call_vs_sb_shove": 0.9984615384615385,
+      "bb_call_vs_btn_shove": 0.9984615384615385,
+      "bb_call_multiway": 0.9971264133992334
+    },
+    {
+      "hand_class": "K9s",
+      "btn_push": 0.013842394037112198,
+      "sb_push_after_btn_fold": 0.9984615384615385,
+      "sb_call_vs_btn_shove": 0.00920859665448815,
+      "bb_call_vs_sb_shove": 0.9880515609002993,
+      "bb_call_vs_btn_shove": 0.64629156357198,
+      "bb_call_multiway": 0.11619678173912128
+    },
+    {
+      "hand_class": "K8s",
+      "btn_push": 0.3757796873883904,
+      "sb_push_after_btn_fold": 0.9984615384615385,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.6641815177714208,
+      "bb_call_vs_btn_shove": 0.010730203154967371,
+      "bb_call_multiway": 0.9962494791425495
+    },
+    {
+      "hand_class": "K7s",
+      "btn_push": 0.014773531280142974,
+      "sb_push_after_btn_fold": 0.023973216449092796,
+      "sb_call_vs_btn_shove": 0.008226534686865784,
+      "bb_call_vs_sb_shove": 0.010171041273257037,
+      "bb_call_vs_btn_shove": 0.011252576565724457,
+      "bb_call_multiway": 0.22918696733760188
+    },
+    {
+      "hand_class": "K6s",
+      "btn_push": 0.9675871447895259,
+      "sb_push_after_btn_fold": 0.01906357497778068,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.4232421397794241,
+      "bb_call_vs_btn_shove": 0.4517603183531817,
+      "bb_call_multiway": 0.1428959757020823
+    },
+    {
+      "hand_class": "K5s",
+      "btn_push": 0.33817049731857585,
+      "sb_push_after_btn_fold": 0.28991750066588867,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.6268022662568773,
+      "bb_call_vs_btn_shove": 0.00944511584533453,
+      "bb_call_multiway": 0.22878089171055913
+    },
+    {
+      "hand_class": "K4s",
+      "btn_push": 0.5489728077094502,
+      "sb_push_after_btn_fold": 0.021366646503613706,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.008751127105592817,
+      "bb_call_vs_btn_shove": 0.9246125218447441,
+      "bb_call_multiway": 0.9984615384615385
+    },
+    {
+      "hand_class": "K3s",
+      "btn_push": 0.9475813788302546,
+      "sb_push_after_btn_fold": 0.9933910946239436,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.011502452265909353,
+      "bb_call_vs_btn_shove": 0.25155586248976136,
+      "bb_call_multiway": 0.9924601605497987
+    },
+    {
+      "hand_class": "K2s",
+      "btn_push": 0.9576858289648034,
+      "sb_push_after_btn_fold": 0.03900986876595142,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.9296005210946108,
+      "bb_call_vs_btn_shove": 0.009256768435117465,
+      "bb_call_multiway": 0.03993975177274664
+    },
+    {
+      "hand_class": "AQo",
+      "btn_push": 0.9984615384615385,
+      "sb_push_after_btn_fold": 0.9984615384615385,
+      "sb_call_vs_btn_shove": 0.9840856294891503,
+      "bb_call_vs_sb_shove": 0.9984615384615385,
+      "bb_call_vs_btn_shove": 0.9984615384615385,
+      "bb_call_multiway": 0.9923755276101138
+    },
+    {
+      "hand_class": "KQo",
+      "btn_push": 0.026726701447660102,
+      "sb_push_after_btn_fold": 0.520644957082322,
+      "sb_call_vs_btn_shove": 0.009438281588597493,
+      "bb_call_vs_sb_shove": 0.9974766740098756,
+      "bb_call_vs_btn_shove": 0.017747392543895846,
+      "bb_call_multiway": 0.26313078841326754
+    },
+    {
+      "hand_class": "QQ",
+      "btn_push": 0.9984615384615385,
+      "sb_push_after_btn_fold": 0.9984615384615385,
+      "sb_call_vs_btn_shove": 0.9984615384615385,
+      "bb_call_vs_sb_shove": 0.9984615384615385,
+      "bb_call_vs_btn_shove": 0.9984615384615385,
+      "bb_call_multiway": 0.9980124899096826
+    },
+    {
+      "hand_class": "QJs",
+      "btn_push": 0.7325602944985552,
+      "sb_push_after_btn_fold": 0.995540121408207,
+      "sb_call_vs_btn_shove": 0.008932232006886228,
+      "bb_call_vs_sb_shove": 0.4790036478949903,
+      "bb_call_vs_btn_shove": 0.8594931575684427,
+      "bb_call_multiway": 0.586256722427805
+    },
+    {
+      "hand_class": "QTs",
+      "btn_push": 0.6847221051193045,
+      "sb_push_after_btn_fold": 0.9984615384615385,
+      "sb_call_vs_btn_shove": 0.011493942651104885,
+      "bb_call_vs_sb_shove": 0.9984615384615385,
+      "bb_call_vs_btn_shove": 0.010547424378808734,
+      "bb_call_multiway": 0.9969096430759333
+    },
+    {
+      "hand_class": "Q9s",
+      "btn_push": 0.8384766471613929,
+      "sb_push_after_btn_fold": 0.16011854017689212,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.976372700382261,
+      "bb_call_vs_btn_shove": 0.010324429281600904,
+      "bb_call_multiway": 0.21009595984758517
+    },
+    {
+      "hand_class": "Q8s",
+      "btn_push": 0.9818219739966926,
+      "sb_push_after_btn_fold": 0.08176898556933723,
+      "sb_call_vs_btn_shove": 0.009061328003374057,
+      "bb_call_vs_sb_shove": 0.9284235553783671,
+      "bb_call_vs_btn_shove": 0.009713281203726172,
+      "bb_call_multiway": 0.9631611831616702
+    },
+    {
+      "hand_class": "Q7s",
+      "btn_push": 0.06987353793438772,
+      "sb_push_after_btn_fold": 0.6706086107656822,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.008889754062012853,
+      "bb_call_vs_btn_shove": 0.01818818246954965,
+      "bb_call_multiway": 0.9984615384615385
+    },
+    {
+      "hand_class": "Q6s",
+      "btn_push": 0.0015384615384615385,
+      "sb_push_after_btn_fold": 0.7333737717731371,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.009313735655897406,
+      "bb_call_vs_btn_shove": 0.010561374430598937,
+      "bb_call_multiway": 0.9984615384615385
+    },
+    {
+      "hand_class": "Q5s",
+      "btn_push": 0.9656658262737465,
+      "sb_push_after_btn_fold": 0.998196512591452,
+      "sb_call_vs_btn_shove": 0.008481294695444558,
+      "bb_call_vs_sb_shove": 0.919316475212044,
+      "bb_call_vs_btn_shove": 0.009973409406660902,
+      "bb_call_multiway": 0.9984615384615385
+    },
+    {
+      "hand_class": "Q4s",
+      "btn_push": 0.0026742309250471874,
+      "sb_push_after_btn_fold": 0.9705674501854651,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.008314582781151459,
+      "bb_call_vs_btn_shove": 0.010387685978223565,
+      "bb_call_multiway": 0.0889314370335742
+    },
+    {
+      "hand_class": "Q3s",
+      "btn_push": 0.007709566747137285,
+      "sb_push_after_btn_fold": 0.05428363356326549,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.0015384615384615385,
+      "bb_call_vs_btn_shove": 0.008999229858476857,
+      "bb_call_multiway": 0.9831892235269566
+    },
+    {
+      "hand_class": "Q2s",
+      "btn_push": 0.003014206525171335,
+      "sb_push_after_btn_fold": 0.01125968753191814,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.0015384615384615385,
+      "bb_call_vs_btn_shove": 0.008181225076635691,
+      "bb_call_multiway": 0.034832542834843445
+    },
+    {
+      "hand_class": "AJo",
+      "btn_push": 0.9984615384615385,
+      "sb_push_after_btn_fold": 0.9984615384615385,
+      "sb_call_vs_btn_shove": 0.9907885657361479,
+      "bb_call_vs_sb_shove": 0.9984615384615385,
+      "bb_call_vs_btn_shove": 0.9984615384615385,
+      "bb_call_multiway": 0.7787974954105978
+    },
+    {
+      "hand_class": "KJo",
+      "btn_push": 0.03505262326197242,
+      "sb_push_after_btn_fold": 0.9984615384615385,
+      "sb_call_vs_btn_shove": 0.009148943273492917,
+      "bb_call_vs_sb_shove": 0.9845959556303661,
+      "bb_call_vs_btn_shove": 0.9837576649774197,
+      "bb_call_multiway": 0.9037236981165111
+    },
+    {
+      "hand_class": "QJo",
+      "btn_push": 0.23628052157083917,
+      "sb_push_after_btn_fold": 0.9668326217121358,
+      "sb_call_vs_btn_shove": 0.05122558200566406,
+      "bb_call_vs_sb_shove": 0.04511564242196579,
+      "bb_call_vs_btn_shove": 0.009093123663282219,
+      "bb_call_multiway": 0.14385144981391235
+    },
+    {
+      "hand_class": "JJ",
+      "btn_push": 0.9984615384615385,
+      "sb_push_after_btn_fold": 0.9984615384615385,
+      "sb_call_vs_btn_shove": 0.9984615384615385,
+      "bb_call_vs_sb_shove": 0.9984615384615385,
+      "bb_call_vs_btn_shove": 0.9984615384615385,
+      "bb_call_multiway": 0.8882619835749873
+    },
+    {
+      "hand_class": "JTs",
+      "btn_push": 0.9551796792411025,
+      "sb_push_after_btn_fold": 0.9984615384615385,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.827638121596355,
+      "bb_call_vs_btn_shove": 0.01002671126053643,
+      "bb_call_multiway": 0.06477475766142363
+    },
+    {
+      "hand_class": "J9s",
+      "btn_push": 0.5537266990176175,
+      "sb_push_after_btn_fold": 0.9931018167664392,
+      "sb_call_vs_btn_shove": 0.009125626984040179,
+      "bb_call_vs_sb_shove": 0.21036791483300726,
+      "bb_call_vs_btn_shove": 0.009420620797254359,
+      "bb_call_multiway": 0.3296632483629129
+    },
+    {
+      "hand_class": "J8s",
+      "btn_push": 0.0015384615384615385,
+      "sb_push_after_btn_fold": 0.9798029593258938,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.37529816857263393,
+      "bb_call_vs_btn_shove": 0.009471388445029517,
+      "bb_call_multiway": 0.16894213740608308
+    },
+    {
+      "hand_class": "J7s",
+      "btn_push": 0.9064509964574997,
+      "sb_push_after_btn_fold": 0.9718762373849935,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.03652008887993142,
+      "bb_call_vs_btn_shove": 0.01054610882638179,
+      "bb_call_multiway": 0.9015917381563378
+    },
+    {
+      "hand_class": "J6s",
+      "btn_push": 0.327588654841907,
+      "sb_push_after_btn_fold": 0.38901223112833794,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.007908891885230446,
+      "bb_call_vs_btn_shove": 0.009677794123724633,
+      "bb_call_multiway": 0.03917233051572951
+    },
+    {
+      "hand_class": "J5s",
+      "btn_push": 0.0018951434529694963,
+      "sb_push_after_btn_fold": 0.04560684819922762,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.008009354405858768,
+      "bb_call_vs_btn_shove": 0.008480693737179313,
+      "bb_call_multiway": 0.009051151893791465
+    },
+    {
+      "hand_class": "J4s",
+      "btn_push": 0.0015384615384615385,
+      "sb_push_after_btn_fold": 0.008055720099720531,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.0015384615384615385,
+      "bb_call_vs_btn_shove": 0.008023305500317138,
+      "bb_call_multiway": 0.12452149081509034
+    },
+    {
+      "hand_class": "J3s",
+      "btn_push": 0.009439152041849377,
+      "sb_push_after_btn_fold": 0.9104426833077283,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.0015384615384615385,
+      "bb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_multiway": 0.010748141205096264
+    },
+    {
+      "hand_class": "J2s",
+      "btn_push": 0.0015384615384615385,
+      "sb_push_after_btn_fold": 0.0558294716918117,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.0015384615384615385,
+      "bb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_multiway": 0.5010388325070714
+    },
+    {
+      "hand_class": "ATo",
+      "btn_push": 0.9984615384615385,
+      "sb_push_after_btn_fold": 0.9984615384615385,
+      "sb_call_vs_btn_shove": 0.011095281851216785,
+      "bb_call_vs_sb_shove": 0.9984615384615385,
+      "bb_call_vs_btn_shove": 0.9693425689586488,
+      "bb_call_multiway": 0.25681476894092986
+    },
+    {
+      "hand_class": "KTo",
+      "btn_push": 0.9759867115486983,
+      "sb_push_after_btn_fold": 0.9984615384615385,
+      "sb_call_vs_btn_shove": 0.4584649712164696,
+      "bb_call_vs_sb_shove": 0.9905350131369526,
+      "bb_call_vs_btn_shove": 0.016989184526422344,
+      "bb_call_multiway": 0.11424163003078527
+    },
+    {
+      "hand_class": "QTo",
+      "btn_push": 0.3389590394139363,
+      "sb_push_after_btn_fold": 0.9984615384615385,
+      "sb_call_vs_btn_shove": 0.008467107612963348,
+      "bb_call_vs_sb_shove": 0.051087201852978596,
+      "bb_call_vs_btn_shove": 0.4086849361471608,
+      "bb_call_multiway": 0.2303689929363549
+    },
+    {
+      "hand_class": "JTo",
+      "btn_push": 0.0015384615384615385,
+      "sb_push_after_btn_fold": 0.7842849413062688,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.010728372747932183,
+      "bb_call_vs_btn_shove": 0.010192423964601733,
+      "bb_call_multiway": 0.2507432294923493
+    },
+    {
+      "hand_class": "TT",
+      "btn_push": 0.9984615384615385,
+      "sb_push_after_btn_fold": 0.9984615384615385,
+      "sb_call_vs_btn_shove": 0.9984258773826695,
+      "bb_call_vs_sb_shove": 0.9984615384615385,
+      "bb_call_vs_btn_shove": 0.9984615384615385,
+      "bb_call_multiway": 0.996560198935847
+    },
+    {
+      "hand_class": "T9s",
+      "btn_push": 0.26828591876935787,
+      "sb_push_after_btn_fold": 0.9984615384615385,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.013161918669564886,
+      "bb_call_vs_btn_shove": 0.009969266162176957,
+      "bb_call_multiway": 0.4818169021591873
+    },
+    {
+      "hand_class": "T8s",
+      "btn_push": 0.9651204684155409,
+      "sb_push_after_btn_fold": 0.9526811630984936,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.009614770896157697,
+      "bb_call_vs_btn_shove": 0.008078813411314629,
+      "bb_call_multiway": 0.9834837020351411
+    },
+    {
+      "hand_class": "T7s",
+      "btn_push": 0.8924678385125575,
+      "sb_push_after_btn_fold": 0.05768674250136877,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.027555088970188907,
+      "bb_call_vs_btn_shove": 0.008923609069702495,
+      "bb_call_multiway": 0.9984615384615385
+    },
+    {
+      "hand_class": "T6s",
+      "btn_push": 0.08246362627317116,
+      "sb_push_after_btn_fold": 0.37577685816058864,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.0015384615384615385,
+      "bb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_multiway": 0.0015384615384615385
+    },
+    {
+      "hand_class": "T5s",
+      "btn_push": 0.0021783421815239614,
+      "sb_push_after_btn_fold": 0.007755691935838078,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.00789439207406386,
+      "bb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_multiway": 0.011691851905776155
+    },
+    {
+      "hand_class": "T4s",
+      "btn_push": 0.0015384615384615385,
+      "sb_push_after_btn_fold": 0.03409137053597478,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.0015384615384615385,
+      "bb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_multiway": 0.7275296648434871
+    },
+    {
+      "hand_class": "T3s",
+      "btn_push": 0.0015384615384615385,
+      "sb_push_after_btn_fold": 0.9692681415445478,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.0015384615384615385,
+      "bb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_multiway": 0.025635418159999333
+    },
+    {
+      "hand_class": "T2s",
+      "btn_push": 0.0015384615384615385,
+      "sb_push_after_btn_fold": 0.7863739227855097,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.0015384615384615385,
+      "bb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_multiway": 0.0015384615384615385
+    },
+    {
+      "hand_class": "A9o",
+      "btn_push": 0.9267942157734765,
+      "sb_push_after_btn_fold": 0.9984615384615385,
+      "sb_call_vs_btn_shove": 0.10294925882905279,
+      "bb_call_vs_sb_shove": 0.976003567560992,
+      "bb_call_vs_btn_shove": 0.8316481787582606,
+      "bb_call_multiway": 0.0726029441637881
+    },
+    {
+      "hand_class": "K9o",
+      "btn_push": 0.023576263945301868,
+      "sb_push_after_btn_fold": 0.017700201181147977,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.5673151024313485,
+      "bb_call_vs_btn_shove": 0.010124000462376987,
+      "bb_call_multiway": 0.1291031942939947
+    },
+    {
+      "hand_class": "Q9o",
+      "btn_push": 0.005425571118385265,
+      "sb_push_after_btn_fold": 0.026041154335117528,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.06673256902725205,
+      "bb_call_vs_btn_shove": 0.009654400204462855,
+      "bb_call_multiway": 0.7540369646834453
+    },
+    {
+      "hand_class": "J9o",
+      "btn_push": 0.003190818022933968,
+      "sb_push_after_btn_fold": 0.14367357729188424,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.008108023887370017,
+      "bb_call_vs_btn_shove": 0.009601020399275576,
+      "bb_call_multiway": 0.15181161574382493
+    },
+    {
+      "hand_class": "T9o",
+      "btn_push": 0.0015384615384615385,
+      "sb_push_after_btn_fold": 0.050644382081259404,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.014019062580264386,
+      "bb_call_vs_btn_shove": 0.007892268843944984,
+      "bb_call_multiway": 0.028201777593018968
+    },
+    {
+      "hand_class": "99",
+      "btn_push": 0.9962370967308446,
+      "sb_push_after_btn_fold": 0.9984615384615385,
+      "sb_call_vs_btn_shove": 0.9682255003079567,
+      "bb_call_vs_sb_shove": 0.9984615384615385,
+      "bb_call_vs_btn_shove": 0.980276457675361,
+      "bb_call_multiway": 0.9984615384615385
+    },
+    {
+      "hand_class": "98s",
+      "btn_push": 0.3463816120397159,
+      "sb_push_after_btn_fold": 0.9520696128394303,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.011918774685465133,
+      "bb_call_vs_btn_shove": 0.009213174782264308,
+      "bb_call_multiway": 0.05976717214210072
+    },
+    {
+      "hand_class": "97s",
+      "btn_push": 0.009777482974397058,
+      "sb_push_after_btn_fold": 0.2391873649659112,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.008668699758532523,
+      "bb_call_vs_btn_shove": 0.010242870106649357,
+      "bb_call_multiway": 0.3120024988589841
+    },
+    {
+      "hand_class": "96s",
+      "btn_push": 0.0025172398891142415,
+      "sb_push_after_btn_fold": 0.9699021498668396,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.0015384615384615385,
+      "bb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_multiway": 0.02695038833889247
+    },
+    {
+      "hand_class": "95s",
+      "btn_push": 0.0015384615384615385,
+      "sb_push_after_btn_fold": 0.01989255161057908,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.0015384615384615385,
+      "bb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_multiway": 0.01387511146305267
+    },
+    {
+      "hand_class": "94s",
+      "btn_push": 0.0015384615384615385,
+      "sb_push_after_btn_fold": 0.010625068122397684,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.0015384615384615385,
+      "bb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_multiway": 0.0015384615384615385
+    },
+    {
+      "hand_class": "93s",
+      "btn_push": 0.0015384615384615385,
+      "sb_push_after_btn_fold": 0.4025289320850236,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.0015384615384615385,
+      "bb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_multiway": 0.9000633711268927
+    },
+    {
+      "hand_class": "92s",
+      "btn_push": 0.0015384615384615385,
+      "sb_push_after_btn_fold": 0.9169103010279434,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.0015384615384615385,
+      "bb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_multiway": 0.0015384615384615385
+    },
+    {
+      "hand_class": "A8o",
+      "btn_push": 0.9632525265533709,
+      "sb_push_after_btn_fold": 0.9954121916036612,
+      "sb_call_vs_btn_shove": 0.00920176676579931,
+      "bb_call_vs_sb_shove": 0.9984615384615385,
+      "bb_call_vs_btn_shove": 0.05052141049493912,
+      "bb_call_multiway": 0.9821895323081229
+    },
+    {
+      "hand_class": "K8o",
+      "btn_push": 0.011167382904256134,
+      "sb_push_after_btn_fold": 0.9969986045440069,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.03552495078235892,
+      "bb_call_vs_btn_shove": 0.013967350959693512,
+      "bb_call_multiway": 0.1413511410495761
+    },
+    {
+      "hand_class": "Q8o",
+      "btn_push": 0.031158353596607215,
+      "sb_push_after_btn_fold": 0.05188209457015892,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.009690139080189095,
+      "bb_call_vs_btn_shove": 0.008342121089334438,
+      "bb_call_multiway": 0.026436101650544122
+    },
+    {
+      "hand_class": "J8o",
+      "btn_push": 0.9178599496032378,
+      "sb_push_after_btn_fold": 0.5627539306513158,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.0015384615384615385,
+      "bb_call_vs_btn_shove": 0.009608384937814693,
+      "bb_call_multiway": 0.04801233150190775
+    },
+    {
+      "hand_class": "T8o",
+      "btn_push": 0.02385983925559404,
+      "sb_push_after_btn_fold": 0.010640428278323677,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.017619458939788807,
+      "bb_call_vs_btn_shove": 0.010644018708453221,
+      "bb_call_multiway": 0.017890144527908262
+    },
+    {
+      "hand_class": "98o",
+      "btn_push": 0.0015384615384615385,
+      "sb_push_after_btn_fold": 0.11114853865502944,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.008140594727466633,
+      "bb_call_vs_btn_shove": 0.009332395382567167,
+      "bb_call_multiway": 0.9452607936106352
+    },
+    {
+      "hand_class": "88",
+      "btn_push": 0.9984615384615385,
+      "sb_push_after_btn_fold": 0.9984615384615385,
+      "sb_call_vs_btn_shove": 0.014614907784626563,
+      "bb_call_vs_sb_shove": 0.9984615384615385,
+      "bb_call_vs_btn_shove": 0.9984615384615385,
+      "bb_call_multiway": 0.32820158773446323
+    },
+    {
+      "hand_class": "87s",
+      "btn_push": 0.006922610147718207,
+      "sb_push_after_btn_fold": 0.030363853681589812,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.008332937082585843,
+      "bb_call_vs_btn_shove": 0.3756426614011565,
+      "bb_call_multiway": 0.9984615384615385
+    },
+    {
+      "hand_class": "86s",
+      "btn_push": 0.0015384615384615385,
+      "sb_push_after_btn_fold": 0.041716838108372394,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.0015384615384615385,
+      "bb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_multiway": 0.013174839585085741
+    },
+    {
+      "hand_class": "85s",
+      "btn_push": 0.0015384615384615385,
+      "sb_push_after_btn_fold": 0.9578391739307143,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.0015384615384615385,
+      "bb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_multiway": 0.9984615384615385
+    },
+    {
+      "hand_class": "84s",
+      "btn_push": 0.16469548396106215,
+      "sb_push_after_btn_fold": 0.08727277753585264,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.0015384615384615385,
+      "bb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_multiway": 0.9137416117485598
+    },
+    {
+      "hand_class": "83s",
+      "btn_push": 0.0015384615384615385,
+      "sb_push_after_btn_fold": 0.05043199345040767,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.0015384615384615385,
+      "bb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_multiway": 0.0015384615384615385
+    },
+    {
+      "hand_class": "82s",
+      "btn_push": 0.0025601749128105326,
+      "sb_push_after_btn_fold": 0.3521944494629667,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.0015384615384615385,
+      "bb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_multiway": 0.8062526680576938
+    },
+    {
+      "hand_class": "A7o",
+      "btn_push": 0.35090520002677533,
+      "sb_push_after_btn_fold": 0.9984615384615385,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.36184691508308864,
+      "bb_call_vs_btn_shove": 0.8846025896641978,
+      "bb_call_multiway": 0.055527758509125946
+    },
+    {
+      "hand_class": "K7o",
+      "btn_push": 0.068654283502053,
+      "sb_push_after_btn_fold": 0.057244678614282785,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.015970730827532694,
+      "bb_call_vs_btn_shove": 0.010103627322446374,
+      "bb_call_multiway": 0.08733392054165127
+    },
+    {
+      "hand_class": "Q7o",
+      "btn_push": 0.012634920423228908,
+      "sb_push_after_btn_fold": 0.011711426269388932,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.010928457270228436,
+      "bb_call_vs_btn_shove": 0.008728998844164643,
+      "bb_call_multiway": 0.10393082465885105
+    },
+    {
+      "hand_class": "J7o",
+      "btn_push": 0.0015384615384615385,
+      "sb_push_after_btn_fold": 0.04475517367918989,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.0015384615384615385,
+      "bb_call_vs_btn_shove": 0.00807129800389363,
+      "bb_call_multiway": 0.09778711502846317
+    },
+    {
+      "hand_class": "T7o",
+      "btn_push": 0.0018958354882045237,
+      "sb_push_after_btn_fold": 0.0015384615384615385,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.0015384615384615385,
+      "bb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_multiway": 0.0015384615384615385
+    },
+    {
+      "hand_class": "97o",
+      "btn_push": 0.1171765673972425,
+      "sb_push_after_btn_fold": 0.718759780359863,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.0015384615384615385,
+      "bb_call_vs_btn_shove": 0.007951327551804563,
+      "bb_call_multiway": 0.9984615384615385
+    },
+    {
+      "hand_class": "87o",
+      "btn_push": 0.9494535189090194,
+      "sb_push_after_btn_fold": 0.9667717341986194,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.0015384615384615385,
+      "bb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_multiway": 0.7098965391719266
+    },
+    {
+      "hand_class": "77",
+      "btn_push": 0.9965302842026972,
+      "sb_push_after_btn_fold": 0.9984615384615385,
+      "sb_call_vs_btn_shove": 0.9807398021107411,
+      "bb_call_vs_sb_shove": 0.9984615384615385,
+      "bb_call_vs_btn_shove": 0.38241186160336943,
+      "bb_call_multiway": 0.17232114342937446
+    },
+    {
+      "hand_class": "76s",
+      "btn_push": 0.0015384615384615385,
+      "sb_push_after_btn_fold": 0.09782932006480885,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.0015384615384615385,
+      "bb_call_vs_btn_shove": 0.00828977157614895,
+      "bb_call_multiway": 0.9984615384615385
+    },
+    {
+      "hand_class": "75s",
+      "btn_push": 0.01302857627902747,
+      "sb_push_after_btn_fold": 0.16197614717084058,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.0015384615384615385,
+      "bb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_multiway": 0.6339657648269926
+    },
+    {
+      "hand_class": "74s",
+      "btn_push": 0.014321087623884786,
+      "sb_push_after_btn_fold": 0.0302200992111838,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.0015384615384615385,
+      "bb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_multiway": 0.7003815153192653
+    },
+    {
+      "hand_class": "73s",
+      "btn_push": 0.0015384615384615385,
+      "sb_push_after_btn_fold": 0.2764106804142059,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.0015384615384615385,
+      "bb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_multiway": 0.0015384615384615385
+    },
+    {
+      "hand_class": "72s",
+      "btn_push": 0.0015384615384615385,
+      "sb_push_after_btn_fold": 0.0025249201617781225,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.0015384615384615385,
+      "bb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_multiway": 0.0015384615384615385
+    },
+    {
+      "hand_class": "A6o",
+      "btn_push": 0.0407634211828902,
+      "sb_push_after_btn_fold": 0.9984615384615385,
+      "sb_call_vs_btn_shove": 0.008581761496037118,
+      "bb_call_vs_sb_shove": 0.579184294697814,
+      "bb_call_vs_btn_shove": 0.29572244052688673,
+      "bb_call_multiway": 0.047052158569586125
+    },
+    {
+      "hand_class": "K6o",
+      "btn_push": 0.012921831818933274,
+      "sb_push_after_btn_fold": 0.056578492788580244,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.010437893205517176,
+      "bb_call_vs_btn_shove": 0.009390908450559884,
+      "bb_call_multiway": 0.9982390254854877
+    },
+    {
+      "hand_class": "Q6o",
+      "btn_push": 0.0015384615384615385,
+      "sb_push_after_btn_fold": 0.011704652985603482,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.022384270216687124,
+      "bb_call_vs_btn_shove": 0.009082843854639842,
+      "bb_call_multiway": 0.014148028911511991
+    },
+    {
+      "hand_class": "J6o",
+      "btn_push": 0.0015384615384615385,
+      "sb_push_after_btn_fold": 0.008037968121902486,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.008215525624472695,
+      "bb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_multiway": 0.011154155847428005
+    },
+    {
+      "hand_class": "T6o",
+      "btn_push": 0.0015384615384615385,
+      "sb_push_after_btn_fold": 0.02239189670873578,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.0015384615384615385,
+      "bb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_multiway": 0.9390237873486845
+    },
+    {
+      "hand_class": "96o",
+      "btn_push": 0.0015384615384615385,
+      "sb_push_after_btn_fold": 0.006195899640340549,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.0015384615384615385,
+      "bb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_multiway": 0.007840394899218365
+    },
+    {
+      "hand_class": "86o",
+      "btn_push": 0.0015384615384615385,
+      "sb_push_after_btn_fold": 0.02623850619218278,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.0015384615384615385,
+      "bb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_multiway": 0.0015384615384615385
+    },
+    {
+      "hand_class": "76o",
+      "btn_push": 0.0038283984118209612,
+      "sb_push_after_btn_fold": 0.0015384615384615385,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.0015384615384615385,
+      "bb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_multiway": 0.0015384615384615385
+    },
+    {
+      "hand_class": "66",
+      "btn_push": 0.9862341892410366,
+      "sb_push_after_btn_fold": 0.9984615384615385,
+      "sb_call_vs_btn_shove": 0.12169191570610294,
+      "bb_call_vs_sb_shove": 0.9849795153864621,
+      "bb_call_vs_btn_shove": 0.17453154826357276,
+      "bb_call_multiway": 0.9984615384615385
+    },
+    {
+      "hand_class": "65s",
+      "btn_push": 0.0015384615384615385,
+      "sb_push_after_btn_fold": 0.0015384615384615385,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.0015384615384615385,
+      "bb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_multiway": 0.00866601752677692
+    },
+    {
+      "hand_class": "64s",
+      "btn_push": 0.009519782812718296,
+      "sb_push_after_btn_fold": 0.017097362211361582,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.0015384615384615385,
+      "bb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_multiway": 0.8578170281479672
+    },
+    {
+      "hand_class": "63s",
+      "btn_push": 0.0015384615384615385,
+      "sb_push_after_btn_fold": 0.0399494429369293,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.0015384615384615385,
+      "bb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_multiway": 0.9878271523553486
+    },
+    {
+      "hand_class": "62s",
+      "btn_push": 0.0015384615384615385,
+      "sb_push_after_btn_fold": 0.03785865518596227,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.0015384615384615385,
+      "bb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_multiway": 0.0015384615384615385
+    },
+    {
+      "hand_class": "A5o",
+      "btn_push": 0.014065046396971473,
+      "sb_push_after_btn_fold": 0.9984615384615385,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.9378349465702137,
+      "bb_call_vs_btn_shove": 0.013004277593680072,
+      "bb_call_multiway": 0.16712254853101327
+    },
+    {
+      "hand_class": "K5o",
+      "btn_push": 0.02068391971251282,
+      "sb_push_after_btn_fold": 0.08872664844687711,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.0015384615384615385,
+      "bb_call_vs_btn_shove": 0.008234873196516324,
+      "bb_call_multiway": 0.022825084827089944
+    },
+    {
+      "hand_class": "Q5o",
+      "btn_push": 0.0015384615384615385,
+      "sb_push_after_btn_fold": 0.9502425443095338,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.0015384615384615385,
+      "bb_call_vs_btn_shove": 0.007997568689662893,
+      "bb_call_multiway": 0.14430109958885928
+    },
+    {
+      "hand_class": "J5o",
+      "btn_push": 0.0038952180786854355,
+      "sb_push_after_btn_fold": 0.007939443981357555,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.00798891625049674,
+      "bb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_multiway": 0.0015384615384615385
+    },
+    {
+      "hand_class": "T5o",
+      "btn_push": 0.0015384615384615385,
+      "sb_push_after_btn_fold": 0.004097719558040537,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.0015384615384615385,
+      "bb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_multiway": 0.0015384615384615385
+    },
+    {
+      "hand_class": "95o",
+      "btn_push": 0.2936535577283526,
+      "sb_push_after_btn_fold": 0.04856959389972046,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.0015384615384615385,
+      "bb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_multiway": 0.0015384615384615385
+    },
+    {
+      "hand_class": "85o",
+      "btn_push": 0.0015384615384615385,
+      "sb_push_after_btn_fold": 0.022440185031427196,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.0015384615384615385,
+      "bb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_multiway": 0.008161270189658421
+    },
+    {
+      "hand_class": "75o",
+      "btn_push": 0.011209321989645965,
+      "sb_push_after_btn_fold": 0.0538718102154708,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.0015384615384615385,
+      "bb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_multiway": 0.0015384615384615385
+    },
+    {
+      "hand_class": "65o",
+      "btn_push": 0.202682261177465,
+      "sb_push_after_btn_fold": 0.02731058166138911,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.0015384615384615385,
+      "bb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_multiway": 0.0015384615384615385
+    },
+    {
+      "hand_class": "55",
+      "btn_push": 0.7786862076622983,
+      "sb_push_after_btn_fold": 0.9984615384615385,
+      "sb_call_vs_btn_shove": 0.9287590061182791,
+      "bb_call_vs_sb_shove": 0.9973165187729022,
+      "bb_call_vs_btn_shove": 0.19630310342979201,
+      "bb_call_multiway": 0.9211676826571705
+    },
+    {
+      "hand_class": "54s",
+      "btn_push": 0.010461257232284148,
+      "sb_push_after_btn_fold": 0.17048612232490504,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.0015384615384615385,
+      "bb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_multiway": 0.8793993140702049
+    },
+    {
+      "hand_class": "53s",
+      "btn_push": 0.007779035602236102,
+      "sb_push_after_btn_fold": 0.8863171408191708,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.0015384615384615385,
+      "bb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_multiway": 0.05027523890966995
+    },
+    {
+      "hand_class": "52s",
+      "btn_push": 0.7545920851111799,
+      "sb_push_after_btn_fold": 0.010605907964237209,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.0015384615384615385,
+      "bb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_multiway": 0.7621340899139178
+    },
+    {
+      "hand_class": "A4o",
+      "btn_push": 0.21000285795200296,
+      "sb_push_after_btn_fold": 0.9984615384615385,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.05311049961629335,
+      "bb_call_vs_btn_shove": 0.025004748307921803,
+      "bb_call_multiway": 0.7121702861812776
+    },
+    {
+      "hand_class": "K4o",
+      "btn_push": 0.02797118763437322,
+      "sb_push_after_btn_fold": 0.018061740317206528,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.010659912319235014,
+      "bb_call_vs_btn_shove": 0.009740871111296524,
+      "bb_call_multiway": 0.020649924870269103
+    },
+    {
+      "hand_class": "Q4o",
+      "btn_push": 0.0015384615384615385,
+      "sb_push_after_btn_fold": 0.1706084896083736,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.0015384615384615385,
+      "bb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_multiway": 0.9729128554473321
+    },
+    {
+      "hand_class": "J4o",
+      "btn_push": 0.0015384615384615385,
+      "sb_push_after_btn_fold": 0.0015384615384615385,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.0015384615384615385,
+      "bb_call_vs_btn_shove": 0.008063168109416558,
+      "bb_call_multiway": 0.0043438482818512255
+    },
+    {
+      "hand_class": "T4o",
+      "btn_push": 0.0015384615384615385,
+      "sb_push_after_btn_fold": 0.02597612790031788,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.0015384615384615385,
+      "bb_call_vs_btn_shove": 0.00791110504505662,
+      "bb_call_multiway": 0.0015384615384615385
+    },
+    {
+      "hand_class": "94o",
+      "btn_push": 0.0015384615384615385,
+      "sb_push_after_btn_fold": 0.0015384615384615385,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.0015384615384615385,
+      "bb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_multiway": 0.0015384615384615385
+    },
+    {
+      "hand_class": "84o",
+      "btn_push": 0.0015384615384615385,
+      "sb_push_after_btn_fold": 0.07890036478003205,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.0015384615384615385,
+      "bb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_multiway": 0.0015384615384615385
+    },
+    {
+      "hand_class": "74o",
+      "btn_push": 0.0015384615384615385,
+      "sb_push_after_btn_fold": 0.006315537318441434,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.0015384615384615385,
+      "bb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_multiway": 0.0015384615384615385
+    },
+    {
+      "hand_class": "64o",
+      "btn_push": 0.0015384615384615385,
+      "sb_push_after_btn_fold": 0.0015384615384615385,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.0015384615384615385,
+      "bb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_multiway": 0.0015384615384615385
+    },
+    {
+      "hand_class": "54o",
+      "btn_push": 0.00358235374030117,
+      "sb_push_after_btn_fold": 0.9415352492551546,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.0015384615384615385,
+      "bb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_multiway": 0.0015384615384615385
+    },
+    {
+      "hand_class": "44",
+      "btn_push": 0.964367373921477,
+      "sb_push_after_btn_fold": 0.9963250509676326,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.9612000641337247,
+      "bb_call_vs_btn_shove": 0.9861316637664803,
+      "bb_call_multiway": 0.058487123476596785
+    },
+    {
+      "hand_class": "43s",
+      "btn_push": 0.0015384615384615385,
+      "sb_push_after_btn_fold": 0.0015384615384615385,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.0015384615384615385,
+      "bb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_multiway": 0.02448472059410362
+    },
+    {
+      "hand_class": "42s",
+      "btn_push": 0.0015384615384615385,
+      "sb_push_after_btn_fold": 0.6873996927539435,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.0015384615384615385,
+      "bb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_multiway": 0.9674793922276496
+    },
+    {
+      "hand_class": "A3o",
+      "btn_push": 0.0015384615384615385,
+      "sb_push_after_btn_fold": 0.9984615384615385,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.9766241365444076,
+      "bb_call_vs_btn_shove": 0.012690639590669094,
+      "bb_call_multiway": 0.10651834834084206
+    },
+    {
+      "hand_class": "K3o",
+      "btn_push": 0.0015384615384615385,
+      "sb_push_after_btn_fold": 0.0369594224576684,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.009323072774603019,
+      "bb_call_vs_btn_shove": 0.008237907702838722,
+      "bb_call_multiway": 0.024367406343081776
+    },
+    {
+      "hand_class": "Q3o",
+      "btn_push": 0.01576503775837142,
+      "sb_push_after_btn_fold": 0.08295199592805556,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.008003636662027615,
+      "bb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_multiway": 0.2891946541137792
+    },
+    {
+      "hand_class": "J3o",
+      "btn_push": 0.0015384615384615385,
+      "sb_push_after_btn_fold": 0.01953419590829993,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.0015384615384615385,
+      "bb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_multiway": 0.0015384615384615385
+    },
+    {
+      "hand_class": "T3o",
+      "btn_push": 0.0015384615384615385,
+      "sb_push_after_btn_fold": 0.10328409773057944,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.0015384615384615385,
+      "bb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_multiway": 0.0015384615384615385
+    },
+    {
+      "hand_class": "93o",
+      "btn_push": 0.0015384615384615385,
+      "sb_push_after_btn_fold": 0.055261592969940314,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.0015384615384615385,
+      "bb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_multiway": 0.6997309886556522
+    },
+    {
+      "hand_class": "83o",
+      "btn_push": 0.002678636337594971,
+      "sb_push_after_btn_fold": 0.0015384615384615385,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.0015384615384615385,
+      "bb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_multiway": 0.922453187774554
+    },
+    {
+      "hand_class": "73o",
+      "btn_push": 0.0015750802244556433,
+      "sb_push_after_btn_fold": 0.9592634927835972,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.0015384615384615385,
+      "bb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_multiway": 0.0015384615384615385
+    },
+    {
+      "hand_class": "63o",
+      "btn_push": 0.0015384615384615385,
+      "sb_push_after_btn_fold": 0.028267017334851045,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.0015384615384615385,
+      "bb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_multiway": 0.0015384615384615385
+    },
+    {
+      "hand_class": "53o",
+      "btn_push": 0.0015384615384615385,
+      "sb_push_after_btn_fold": 0.004178600622888958,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.0015384615384615385,
+      "bb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_multiway": 0.0015384615384615385
+    },
+    {
+      "hand_class": "43o",
+      "btn_push": 0.0015384615384615385,
+      "sb_push_after_btn_fold": 0.0015384615384615385,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.0015384615384615385,
+      "bb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_multiway": 0.0015384615384615385
+    },
+    {
+      "hand_class": "33",
+      "btn_push": 0.02033739992079044,
+      "sb_push_after_btn_fold": 0.9908885715738541,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.03550746765144296,
+      "bb_call_vs_btn_shove": 0.9107581339753383,
+      "bb_call_multiway": 0.07018238587068394
+    },
+    {
+      "hand_class": "32s",
+      "btn_push": 0.0015384615384615385,
+      "sb_push_after_btn_fold": 0.0015384615384615385,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.0015384615384615385,
+      "bb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_multiway": 0.012767210572570407
+    },
+    {
+      "hand_class": "A2o",
+      "btn_push": 0.06094252354135979,
+      "sb_push_after_btn_fold": 0.9984615384615385,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.9786442753305649,
+      "bb_call_vs_btn_shove": 0.01963836777205159,
+      "bb_call_multiway": 0.07585070270518772
+    },
+    {
+      "hand_class": "K2o",
+      "btn_push": 0.9329735586286789,
+      "sb_push_after_btn_fold": 0.09426726132665594,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.007956806819683065,
+      "bb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_multiway": 0.0015384615384615385
+    },
+    {
+      "hand_class": "Q2o",
+      "btn_push": 0.00530170072141452,
+      "sb_push_after_btn_fold": 0.053020372969041274,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.0015384615384615385,
+      "bb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_multiway": 0.0015384615384615385
+    },
+    {
+      "hand_class": "J2o",
+      "btn_push": 0.0015384615384615385,
+      "sb_push_after_btn_fold": 0.23973510394506464,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.0015384615384615385,
+      "bb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_multiway": 0.0015384615384615385
+    },
+    {
+      "hand_class": "T2o",
+      "btn_push": 0.0015384615384615385,
+      "sb_push_after_btn_fold": 0.0015384615384615385,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.0015384615384615385,
+      "bb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_multiway": 0.0015384615384615385
+    },
+    {
+      "hand_class": "92o",
+      "btn_push": 0.0015384615384615385,
+      "sb_push_after_btn_fold": 0.0015384615384615385,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.0015384615384615385,
+      "bb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_multiway": 0.0015384615384615385
+    },
+    {
+      "hand_class": "82o",
+      "btn_push": 0.0015384615384615385,
+      "sb_push_after_btn_fold": 0.01593099711716362,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.0015384615384615385,
+      "bb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_multiway": 0.0512813639839117
+    },
+    {
+      "hand_class": "72o",
+      "btn_push": 0.0015384615384615385,
+      "sb_push_after_btn_fold": 0.0019381588891056777,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.0015384615384615385,
+      "bb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_multiway": 0.0015384615384615385
+    },
+    {
+      "hand_class": "62o",
+      "btn_push": 0.0015384615384615385,
+      "sb_push_after_btn_fold": 0.0015384615384615385,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.0015384615384615385,
+      "bb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_multiway": 0.017273122892848835
+    },
+    {
+      "hand_class": "52o",
+      "btn_push": 0.0018680780951784456,
+      "sb_push_after_btn_fold": 0.013415042090417618,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.0015384615384615385,
+      "bb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_multiway": 0.032604415474465936
+    },
+    {
+      "hand_class": "42o",
+      "btn_push": 0.0022824609438094594,
+      "sb_push_after_btn_fold": 0.9135185293216206,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.0015384615384615385,
+      "bb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_multiway": 0.0015384615384615385
+    },
+    {
+      "hand_class": "32o",
+      "btn_push": 0.0015384615384615385,
+      "sb_push_after_btn_fold": 0.0015384615384615385,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.0015384615384615385,
+      "bb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_multiway": 0.0015384615384615385
+    },
+    {
+      "hand_class": "22",
+      "btn_push": 0.9524025144021695,
+      "sb_push_after_btn_fold": 0.9982452394721699,
+      "sb_call_vs_btn_shove": 0.0015384615384615385,
+      "bb_call_vs_sb_shove": 0.9572208526054108,
+      "bb_call_vs_btn_shove": 0.0093523408981821,
+      "bb_call_multiway": 0.7551400809017682
+    }
+  ]
+}
